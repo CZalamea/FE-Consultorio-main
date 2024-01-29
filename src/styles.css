@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;600&display=swap');
+
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+}
+
+:root {
+    --RoyalBlue: #3064cb;
+    --MidnightBlue: #0E2048;
+    --CoralRed: #ff5c5d;
+    --BluishGray: #A6AFBE;
+}

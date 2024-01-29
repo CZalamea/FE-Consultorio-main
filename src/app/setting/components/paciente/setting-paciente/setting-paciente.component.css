@@ -1,0 +1,55 @@
+.container-fluid {
+    height: 77vh;
+}
+
+.card {
+    padding: .2rem 0;
+}
+
+.title{
+    text-transform: uppercase;
+    font-size: small;
+    padding: .4rem 0;
+    color: var(--MidnightBlue);
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+.btn-custom {
+    width: 100%;
+    height: auto;
+    margin-top: .5rem;
+    padding-bottom: 0;
+    background: var(--RoyalBlue);
+    transition: background 500ms ease;
+}
+  
+.btn-custom:hover {
+    background: var(--MidnightBlue);
+}
+  
+.btn-custom mat-icon{
+    height: 1.5rem;
+    margin-top: .1rem;
+    color: white;
+}
+
+.btn-accion{
+    font-size: x-small;
+    height: 2rem;
+    margin: 0 .2rem;
+    width: 30%;
+}
+
+.btn-accion mat-icon{
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+}
+  
+td, th {
+    width: 25%;
+    font-size: .8rem;
+}

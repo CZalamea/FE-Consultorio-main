@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container ">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar></mat-toolbar>
+
+    <div class="position-relative">
+      <div class="position-absolute radius-custom radius-shape-1"></div>
+    </div>
+
+    <mat-nav-list>
+      <div class="container pt-5">
+          <button class="btn btn-custom shadow-sm" routerLink="/setting/medicos">
+              <mat-icon>medical_services</mat-icon>
+              <span class="mb-1">Médicos</span>
+          </button>
+      </div>
+      <div class="container">
+          <button class="btn btn-custom shadow-sm" routerLink="/setting/pacientes">
+              <mat-icon>personal_injury</mat-icon>
+              <span class="mb-1">Pacientes</span>
+          </button>
+      </div>
+      <div class="container">
+          <button class="btn btn-custom shadow-sm" routerLink="/setting/consulta">
+              <mat-icon>emergency</mat-icon>
+              <span class="mb-1">Consulta</span>
+          </button>
+      </div>      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="shadow-sm mb-4">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="px-3"> Bienvenido  </span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="cerrarSesion()">
+          <mat-icon>logout</mat-icon>
+        <span>Salir</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

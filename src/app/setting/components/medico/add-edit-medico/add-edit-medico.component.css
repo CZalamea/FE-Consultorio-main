@@ -1,0 +1,55 @@
+mat-form-field{
+    width: 100%;
+}
+
+.btn-danger {
+    background: var(--CoralRed);
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 300ms linear;
+}
+
+.btn-danger:hover {
+    background-color: #e94949;
+}
+
+.btn-danger:active {
+    border: none;
+    background-color: #e94949;
+    color: white;
+}
+
+.btn-custom {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+    background: var(--RoyalBlue);
+    transition: background 500ms ease;
+}
+  
+.btn-custom:hover {
+    background: var(--MidnightBlue);
+}
+  
+.btn-custom mat-icon{
+    height: 1.5rem;
+    margin-top: .1rem;
+    color: white;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"],
+input[type="number"],
+.textarea,
+.select
+{
+    font-size: smaller;
+}
+
+mat-label {
+    color: var(--MidnightBlue);
+    font-size: smaller;
+    font-weight: bolder;
+}

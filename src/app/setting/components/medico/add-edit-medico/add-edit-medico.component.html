@@ -1,0 +1,102 @@
+<div class="container-sm p-4">
+    <div class="card-title w-100">
+        <span class="h5 ms-3 text-uppercase fw-bold">{{title}}</span>
+    </div>
+    <div class="container-sm w-100 p-3 pt-0">       
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="row row-cols-2 mt-4">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label> Nombre </mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="nombre">
+                        <mat-icon matPrefix>border_color</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label> Email </mat-label>
+                        <input type="email" matInput autocomplete="off" formControlName="email">
+                        <mat-icon matPrefix>mail</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+            
+            <div class="row row-cols-2">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label> Teléfono </mat-label>
+                        <input type="tel" matInput autocomplete="off" formControlName="telefono">
+                        <mat-icon matPrefix>phone_iphone</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label> Especialidad </mat-label>
+                        <mat-select formControlName="especialidad">
+                            <mat-option class="select" *ngFor="let especialidad of especialidades" [value]="especialidad">
+                            {{ especialidad }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon matPrefix>supervised_user_circle</mat-icon>
+                    </mat-form-field>                              
+                </div>
+            </div>          
+            
+            <div class="row row-cols-2">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label> Calle </mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="calle">
+                        <mat-icon matPrefix>pin_drop</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label> Distrito </mat-label>
+                        <input type="text" matInput autocomplete="off" formControlName="distrito">
+                        <mat-icon matPrefix>map</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row row-cols-2">                        
+                <div class="col">
+                    <div class="row">
+                        <mat-form-field appearance="outline">
+                            <mat-label> Ciudad </mat-label>
+                            <input type="text" matInput autocomplete="off" formControlName="ciudad">
+                            <mat-icon matPrefix>emoji_flags</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field appearance="outline">
+                            <mat-label> Número </mat-label>
+                            <input type="text" matInput autocomplete="off" formControlName="numero">
+                            <mat-icon matPrefix>apartment</mat-icon>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label> Complemento </mat-label>
+                        <textarea class="textarea" cols="20" matInput rows="4" formControlName="complemento"></textarea>
+                        <mat-icon matPrefix>my_location</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row row-cols-2">
+                <div class="col">
+                    <button class="btn btn-danger btn-sm w-100" mat-dialog-close >
+                        <mat-icon> close </mat-icon>
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-custom btn-sm w-100" type="submit" >
+                        <mat-icon>{{iconName}}</mat-icon>
+                    </button>
+                </div>
+            </div>         
+        </form>
+    </div>
+</div>

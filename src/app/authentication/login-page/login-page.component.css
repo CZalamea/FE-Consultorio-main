@@ -1,0 +1,152 @@
+.container-fluid {
+    background-color: var(--MidnightBlue);
+    height: 100%;
+}
+
+.container  {
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.background-radial-gradient {
+    background-color: var(--MidnightBlue);
+    background-image: 
+        radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+            hsl(218, 41%, 45%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%);
+}
+
+.radius-shape-1 {
+    height: 220px;
+    width: 220px;
+    top: -60px;
+    left: -130px;
+    background: radial-gradient(#0E2048, #3D73DD);
+    overflow: hidden;
+}
+
+.radius-shape-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    bottom: -60px;
+    right: -110px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(#0E2048, #3D73DD);
+    overflow: hidden;
+    animation: spin-and-shape 12s linear infinite;
+}
+
+.radius-shape-3 {
+    border-radius: 38% 102% 100% 100% / 70% 200% 100% 30%;
+    top: -10rem;
+    left: -50rem;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(#0E2048, #3D73DD);
+    overflow: hidden;
+    animation: symbiote 10s infinite alternate;
+}
+
+.bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+}
+
+.border-custom {
+    content: '';
+    width: 16rem;
+    height: .1rem;
+    background-color: var(--CoralRed);
+}
+
+.card {
+    color: var(--CoralRed);
+    font-weight: bold;
+    width: 90%;
+    margin: 0 auto;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.btn-custom {
+    background: var(--CoralRed);
+    color: white;
+    font-weight: bold;
+    transition: background-color 300ms linear;
+}
+
+.btn-custom:hover {
+    background-color: #e94949;
+}
+
+.btn-custom:active {
+    background-color: #e94949;
+    border: 1px solid var(--CoralRed);
+    color: white;
+}
+
+input[type="text"], input[type="password"] {
+    font-size: smaller;
+}
+  
+@keyframes symbiote {
+    0% {
+        transform: scale(1);
+        border-radius: 38% 102% 100% 100% / 70% 200% 100% 30%;
+        background: radial-gradient(#0E2048, #3D73DD);
+    }
+    50% {
+        transform: scale(1.05);
+        border-radius: 100% 0% 110% 105% / 0% 10% 95% 28%;
+        background: radial-gradient(#0E2048, #3D73DD);
+    }
+    100% {
+        transform: scale(1);
+        border-radius: 38% 102% 100% 100% / 70% 200% 100% 30%;
+        background: radial-gradient(#0E2048, #3D73DD);
+    }
+}
+
+@keyframes spin-and-shape {
+    0% {
+        transform: rotate(0deg);
+        border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    }
+
+    25% {
+        transform: rotate(50deg);
+        border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+    }
+
+    50% {
+        transform: rotate(100deg);
+        border-radius: 50%;
+    }
+
+    75% {
+        transform: rotate(50deg);
+        border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+    }
+    
+    100% {
+        transform: rotate(0deg);
+        border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    }
+}
+
+@media (max-width: 991px) {
+    .container-info {
+      display: none;
+    }
+}

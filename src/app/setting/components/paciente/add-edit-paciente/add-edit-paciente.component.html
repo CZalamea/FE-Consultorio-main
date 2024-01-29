@@ -1,0 +1,63 @@
+
+<div class="card">
+
+    <div class="card-body">
+      <div class="card-header">
+            <div class="card-title">{{ title}}</div>
+      </div>
+
+      <form class="example-form"  (submit)="editarCrearPaciente()"     >
+        <div class="row"  *ngIf="editar">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Codigo</mat-label>
+            <input type="text" matInput value="{{data.id}}"   disabled="editar" />
+            <mat-icon matSuffix>edit</mat-icon>
+          </mat-form-field>
+        </div>
+  
+        <div class="row">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput  value="{{data.nombre}}"/>
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+        </div>
+  
+        <div class="row">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Correo</mat-label>
+            <input type="email" matInput value="{{data.email}}" />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </div>
+  
+        <div class="row">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Teléfono</mat-label>
+            <input type="text" matInput value="{{data.telefono}}"/>
+            <mat-icon matSuffix>call</mat-icon>
+          </mat-form-field>
+        </div>
+  
+        <div class="row">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Documento</mat-label>
+            <input type="text" matInput  value="{{data.documento}}"/>
+            <mat-icon matSuffix>map</mat-icon>
+          </mat-form-field>
+        </div>
+  
+        <div class="row">
+          <div mat-dialog-actions>
+            <button mat-button mat-dialog-editar  >{{labelButton}}</button>
+  
+            <button  class="button2" mat-button mat-dialog-close>Salir</button>
+  
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  
+  </div>
+  

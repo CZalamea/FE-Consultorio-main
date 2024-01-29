@@ -1,0 +1,97 @@
+<div class="container-fluid background-radial-gradient overflow-hidden">
+  <div class="container px-5 py-3 ">
+    <div class="row gx-5 align-items-center">
+      <div class="col mb-4 container-info">
+        <p class="mb-3 fw-bold fs-1" style="color: var(--CoralRed)">Bienvenido</p>
+        <p class="fs-5 text-white">Solo personal autorizado</p>
+        <div class="border-custom mb-5"></div>
+        <p class="mb-4 opacity-70 text-white" >
+          Aquí, podrás llevar un control completo de la información de los pacientes, podrás agendar citas con facilidad y gestionar datos de doctores de manera eficiente. brindando todas las herramientas necesarias para un mantenimiento seguro.
+        </p>
+      </div>    
+      <div class="col position-relative">
+        <div class="position-absolute radius-shape-1 rounded-circle"></div>
+        <div class="position-absolute radius-shape-2"></div>
+        <div class="position-absolute radius-shape-3"></div>
+        <div class="card bg-glass shadow-sm">
+          <div class="card-body px-4 py-5 pt-0 px-md-5">
+            <div class="w-50 m-0 m-auto">
+              <div class="visual">
+                <svg viewBox="0 0 320 320">
+                  <defs>
+                    <circle id="circle-clip" cx="50%" cy="50%" r="25%" />
+                    <clipPath id="avatar-clip">
+                      <use href="#circle-clip" />
+                    </clipPath>
+                  </defs>
+            
+                  <circle cx="50%" cy="50%" r="25%" fill="white" fill-opacity="1">
+                    <animate attributeName="r" values="25%;50%" dur="4s" repeatCount="indefinite" />
+                    <animate attributeName="fill-opacity" values="1;0" dur="4s" repeatCount="indefinite" />
+                  </circle>
+            
+                  <circle cx="50%" cy="50%" r="25%" fill="white" fill-opacity="1">
+                    <animate attributeName="r" values="25%;50%" dur="4s" begin="1s" repeatCount="indefinite" />
+                    <animate attributeName="fill-opacity" values="1;0" dur="4s" begin="1s" repeatCount="indefinite" />
+                  </circle>
+            
+                  <circle cx="50%" cy="50%" r="25%" fill="white" fill-opacity="1">
+                    <animate attributeName="r" values="25%;50%" dur="4s" begin="2s" repeatCount="indefinite" />
+                    <animate attributeName="fill-opacity" values="1;0" dur="4s" begin="2s" repeatCount="indefinite" />
+                  </circle>
+            
+                  <circle cx="50%" cy="50%" r="25%" fill="white" fill-opacity="1">
+                    <animate attributeName="r" values="25%;50%" dur="4s" begin="3s" repeatCount="indefinite" />
+                    <animate attributeName="fill-opacity" values="1;0" dur="4s" begin="3s" repeatCount="indefinite" />
+                  </circle>
+            
+                  <image height="50%" width="50%" x="25%" y="25%" href="../../../assets/img/avatar.png" clip-path="url(#avatar-clip)" />  
+                </svg>
+              </div>             
+            </div>
+            <div class="text-center py-2  mb-4">
+              <span class="fs-2 text-uppercase">Credenciales</span>
+            </div>
+            <form [formGroup]="form" (ngSubmit)="handleLogin()">
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline">
+                    <mat-label> Username </mat-label>
+                    <input 
+                      type="text" 
+                      matInput 
+                      autocomplete="off" 
+                      formControlName="username"
+                    >
+                    <mat-icon matPrefix>person</mat-icon>
+                  </mat-form-field>
+                </div>
+                <div class="row m-0 p-0">
+                  <div class="col">
+                    <mat-form-field appearance="outline">
+                      <mat-label> Password </mat-label>
+                      <input
+                        [type]="mostrarContrasena ? 'text' : 'password'"
+                        matInput
+                        autocomplete="off"
+                        formControlName="password"
+                      >
+                      <mat-icon matPrefix>lock</mat-icon>
+                      <button type="button" mat-icon-button matSuffix (click)="mostrarContrasena = !mostrarContrasena">
+                        <mat-icon>{{ mostrarContrasena ? 'visibility' : 'visibility_off' }}</mat-icon>
+                      </button>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <button type="submit" class="btn btn-custom w-100">Login</button>
+              </div>              
+              <mat-progress-bar class=" mt-2" color="warn" mode="indeterminate" *ngIf="bandera"></mat-progress-bar>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
